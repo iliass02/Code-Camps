@@ -1,0 +1,10 @@
+function data()
+{
+	var avis = $('#avis').val();
+	var p = document.createElement('p');
+	var div = document.createElement('div');
+	var text = document.createTextNode(avis);
+	p.appendChild(text);
+	div.appendChild(p);
+	document.body.appendChild(div);
+}

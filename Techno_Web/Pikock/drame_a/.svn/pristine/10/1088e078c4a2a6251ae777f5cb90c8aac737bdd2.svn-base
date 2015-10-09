@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+   		<title>Téléchargement Terminé</title>
+    	<link rel="stylesheet" type="text/css" href="téléchargement.css">
+    	<meta http-equiv="Content Type" content="text/html"; charset="utf-8">
+	</head>
+<font face="Oswald"></font>
+	<body>
+		</br></br></br></br></br>
+		<h1>Téléchargement Terminé !</h1>
+		<center><img src="Validation.png"><center>
+    </body>
+</html>

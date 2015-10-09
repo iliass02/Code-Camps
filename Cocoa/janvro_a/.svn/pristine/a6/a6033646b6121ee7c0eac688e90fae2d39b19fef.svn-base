@@ -1,0 +1,16 @@
+//
+//  TableViewCell.h
+//  test3
+//
+//  Created by Antoine JANVROT on 24/04/15.
+//  Copyright (c) 2015 Antoine JANVROT. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface TableViewCell : UITableViewCell
+
+@property (nonatomic, strong) IBOutlet UILabel *TitleLabel;
+@property (nonatomic, strong) IBOutlet UIImageView *ThumbImage;
+
+@end

@@ -1,0 +1,15 @@
+<html>
+<head>
+   <title>Chargement du Site</title>
+    <link rel="stylesheet" type="text/css" href="chargement.css">
+</head>
+<font face="Oswald"></font>
+<body>
+</br></br></br></br></br><h1>Chargement ...</h1>
+<div class="loader">
+<span></span>
+<span></span>
+<span></span>
+</div>
+    </body>
+    <html>

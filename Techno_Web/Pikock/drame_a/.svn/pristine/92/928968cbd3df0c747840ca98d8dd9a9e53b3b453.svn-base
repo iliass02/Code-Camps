@@ -1,0 +1,21 @@
+<?php
+
+echo "Téléchargement terminé, vous pouvez récupérer votre code QR";
+
+function choppe_image($_url,$_fichier){
+    $in = fopen($_url, "rb");
+    $out = fopen($_fichier, "wb");
+
+    while ($brut = fread($in,8192)){
+        fwrite($out, $brut, 8192);
+    }
+    fclose($in); 
+    fclose($out);
+}
+
+$url = 'http://chart.apis.google.com/chart?cht=qr&chs=500x500&chl=amadeus.pikock.me';
+$fichier = $_SERVER['DOCUMENT_ROOT'].'/Présentation_final/code_qr.jpg';
+
+choppe_image($url,$fichier);
+
+?>

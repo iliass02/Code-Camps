@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+<head>
+  <meta charset="utf-8">
+  <title>Widget Notation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="note-picker">
+    <fieldset class="note-picker-fieldset">
+      <input type="radio" name="number" value="one" id="one">
+      <label for="one" class="note-picker-label">1</label>
+      <input type="radio" name="number" value="two" id="two">
+      <label for="two" class="note-picker-label">2</label>
+      <input type="radio" name="number" value="three" id="three">
+      <label for="three" class="note-picker-label">3</label>
+      <input type="radio" name="number" value="four" id="four">
+      <label for="four" class="note-picker-label">4</label>
+      <input type="radio" name="number" value="five" id="five">
+      <label for="five" class="note-picker-label">5</label>
+      <input type="radio" name="number" value="six" id="six">
+      <label for="six" class="note-picker-label">6</label>
+      <input type="radio" name="number" value="seven" id="seven" checked>
+      <label for="seven" class="note-picker-label">7</label>
+      <input type="radio" name="number" value="eight" id="eight">
+      <label for="eight" class="note-picker-label">8</label>
+      <input type="radio" name="number" value="nine" id="nine">
+      <label for="nine" class="note-picker-label">9</label>
+      <input type="radio" name="number" value="ten" id="ten">
+      <label for="ten" class="note-picker-label">10</label>
+    </fieldset>    
+  </div>
+
+  <section class="about">
+    <fieldset class="about-links">
+      <form method="post" action="#">
+        <center><p>Détaillez les raisons de votre note</p></center>
+        <center><textarea name="positive" rows=10 COLS=40></textarea></center>  
+      </form>
+    </fieldset>
+  </section>
+</body>
+</html>

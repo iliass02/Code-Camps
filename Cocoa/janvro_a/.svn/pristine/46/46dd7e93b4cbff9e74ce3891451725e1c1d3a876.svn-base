@@ -1,0 +1,26 @@
+//
+//  PhotoViewController.h
+//  test3
+//
+//  Created by Antoine JANVROT on 25/04/15.
+//  Copyright (c) 2015 Antoine JANVROT. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "Social/Social.h"
+#import "Accounts/Accounts.h"
+
+@interface PhotoViewController : UIViewController <UINavigationControllerDelegate,UIImagePickerControllerDelegate> {
+    
+    SLComposeViewController *mySLComposerSheet;
+    
+    __weak IBOutlet UIImageView *ImageView;
+    UIImagePickerController *picker;
+    UIImage *image;
+}
+
+- (IBAction)TakePhoto:(id)sender;
+- (IBAction)PhotoLibrary:(id)sender;
+- (IBAction)Facebook:(id)sender;
+
+@end

@@ -1,0 +1,22 @@
+body
+{
+  background-color: white;
+}
+@font-face {
+font-family: "Oswald"; 
+src: url('Oswald.eot');
+src: local('Oswald-Regular'), local('Oswald'), url('Oswald.woff') 
+     format('woff'), url('Oswald-Regular.ttf') format('truetype'),
+     url('Oswald.svg#Oswald') format('svg')
+}
+h1
+{
+  font-size: 4em;
+  text-align: center;
+  font-family: "Oswald";
+  color: #848484;
+}
+img
+{
+	text-align: center;
+}

@@ -1,0 +1,81 @@
+//
+//  ViewController.m
+//  test3
+//
+//  Created by Antoine JANVROT on 24/04/15.
+//  Copyright (c) 2015 Antoine JANVROT. All rights reserved.
+//
+
+#import "ViewController.h"
+
+@interface ViewController ()
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    _ImageView.image = [UIImage imageNamed:_DetailModal[1]];
+    
+    self.navigationItem.title = _DetailModal[0];
+    
+    
+    if ([self.navigationItem.title isEqualToString:@"Poppy"]) {
+        Age.text = @"2 ans";
+        Poids.text = @"3 kilos";
+        Autre.text = @"Aime les papillons";
+    }
+    
+    if ([self.navigationItem.title isEqualToString:@"Moush"]) {
+        Age.text = @"1 ans";
+        Poids.text = @"3 kilos";
+        Autre.text = @"Griffe les canapés";
+    }
+    
+    if ([self.navigationItem.title isEqualToString:@"Bill"]) {
+        Age.text = @"3 ans";
+        Poids.text = @"3.5 kilos";
+        Autre.text = @"Ronfle quand il dort";
+    }
+    
+    if ([self.navigationItem.title isEqualToString:@"Stanley"]) {
+        Age.text = @"2 ans";
+        Poids.text = @"3.6 kilos";
+        Autre.text = @"Très calin";
+    }
+    
+    if ([self.navigationItem.title isEqualToString:@"Suchi"]) {
+        Age.text = @"5 ans";
+        Poids.text = @"4 kilos";
+        Autre.text = @"Court partout";
+    }
+    
+    if ([self.navigationItem.title isEqualToString:@"Tigrou"]) {
+        Age.text = @"8 mois";
+        Poids.text = @"2.7 kilos";
+        Autre.text = @"Aime les chiens";
+    }
+    
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+- (IBAction)Contact:(id)sender{
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *mailcontroller = [[MFMailComposeViewController alloc] init];
+        mailcontroller.mailComposeDelegate = self;
+       [mailcontroller setSubject:@"Adoption"];
+        NSArray *emailArray = [NSArray arrayWithObjects:@"lesamisdepepito@gmail.com" ,nil];
+        [mailcontroller setToRecipients:emailArray];
+        mailcontroller.modalPresentationStyle = UIModalPresentationPageSheet;
+        
+        [self presentViewController:mailcontroller animated:YES completion:nil];
+    }
+    
+}
+
+@end

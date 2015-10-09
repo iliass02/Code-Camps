@@ -1,0 +1,118 @@
+
+/*Text area, zone de texte*/
+.about{
+  margin: auto;
+  margin-left: auto;
+  padding: 8px;
+  width: 260px;
+  font: 10px/18px 'Lucida Grande', Arial, sans-serif;
+
+  /*Mise en forme du texte*/
+  color: #666;
+  text-align: center;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.25);
+  background: rgba(0,0,0,0);
+  border-radius: 4px;
+}
+
+.about-links
+{
+display: inline-block;
+  padding: 0 7px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+
+}
+
+/*Background*/
+.about a {
+  color: #333;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+/*Body*/
+body {
+  font: 12px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
+  color: #404040;
+  background: #111010;
+}
+
+/*Sélectionneur de note*/
+.note-picker {
+  margin: auto;
+  width: 600px;
+  text-align: center;
+}
+
+/*Sélectionneur de notes, mise en forme*/
+.note-picker-fieldset {
+  display: inline-block;
+  padding: 0 7px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+/*Bouton radio caché*/
+.note-picker-fieldset > input {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/*Nnombres*/
+.note-picker-label, .note-picker-nav {
+  display: inline-block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 25px;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+/*Contour surbrillance*/
+input:focus + .note-picker-label, .note-picker-nav:focus {
+  outline: 2px solid #5e9ed7;
+  /*Subrillance*/
+  outline: 5px auto;
+}
+
+/*Sélectionneur de notes*/
+.note-picker-label {
+  position: relative;
+  padding: 0 7px;
+  font-size: 12px;
+  font-weight: 200;
+  color: #8d8ba6;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px black;
+}
+
+/*Mise en forme lors de la sélection*/
+.note-picker-label:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  border: 2px solid;
+  border-color: #e4e0fb #b6b1d1 #b6b1d1;
+  border-radius: 6px;
+  opacity: 0;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+/*Mettre en surbrillance la note sélectionné*/
+input:checked + .note-picker-label {
+  color: white;
+  background: #302e42;
+}
+
+input:checked + .note-picker-label:before {
+  opacity: 1;
+}
+/*Bouton submit*/
+input[type=submit]{
+ width:100px;
+ margin-left:5px;
+ box-shadow:2px 1px 1px #5d5d5d;
+ cursor:pointer;
+ }

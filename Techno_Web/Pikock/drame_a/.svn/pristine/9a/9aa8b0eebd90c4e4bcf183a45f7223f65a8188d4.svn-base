@@ -1,0 +1,43 @@
+<?php
+
+/*
+
+var_dump($_SERVER);
+
+$url = "http://chart.apis.google.com/chart?cht=qr&chs=500x500&chl=amadeus.pikock.me";
+
+$path = '/Users/amadeus/Desktop';
+
+$name = array_pop(explode('/',$url));
+
+copy($url,$path.'/'.$name);
+
+
+$file = "http://chart.apis.google.com/chart?cht=qr&chs=500x500&chl=amadeus.pikock.me";
+ 
+if(file_exists($file))
+{
+
+*/
+
+
+
+function choppe_image($_url,$_fichier){
+    $in = fopen($_url, "rb");
+    $out = fopen($_fichier, "wb");
+
+    while ($brut = fread($in,8192)){
+        fwrite($out, $brut, 8192);
+    }
+    fclose($in); 
+    fclose($out);
+}
+
+$url = 'http://chart.apis.google.com/chart?cht=qr&chs=500x500&chl=amadeus.pikock.me';
+$fichier = '/var/www/html/image_test.jpg';
+
+choppe_image($url,$fichier);
+
+
+
+?>

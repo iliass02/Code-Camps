@@ -1,0 +1,28 @@
+function data()
+{
+	var avis = $('#avis').val();
+	var note = $('input[type=radio][name=number]:checked').attr('value');
+	var ladate = new Date()
+	var date = ladate.getDate()+"/"+(ladate.getMonth()+1)+"/"+ladate.getFullYear()+" "+ladate.getHours()+":"+ladate.getMinutes();
+	var pseudo = $('#pseudo').val();
+	var p = document.createElement('p');
+	var p2 = document.createElement('p');
+	var p0 = document.createElement('p');
+	var fieldset = document.createElement('fieldset');
+	var div = document.createElement('div');
+	var text0 = document.createTextNode("Par "+pseudo);
+	var text = document.createTextNode(note+"/10 : "+avis);
+	var text2 = document.createTextNode(date);
+	p0.appendChild(text0);
+	p.appendChild(text);
+	p2.appendChild(text2);
+	div.appendChild(p0);
+	div.appendChild(p);
+	div.appendChild(p2);
+	fieldset.appendChild(div)
+	document.body.appendChild(fieldset);
+
+	$('div:eq(1)').hide();
+
+	$('div:eq(1)').slideDown('3000');
+}

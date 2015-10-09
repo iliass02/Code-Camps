@@ -1,0 +1,16 @@
+function data()
+{
+	var avis = $('#avis').val();
+	var note = $('input[type=radio][name=number]:checked').attr('value');
+	var p = document.createElement('p');
+	var fieldset = document.createElement('fieldset');
+	var div = document.createElement('div');
+	var text = document.createTextNode(note+"/10 : "+avis);
+	p.appendChild(text);
+	div.appendChild(p);
+	fieldset.appendChild(div)
+	document.body.appendChild(fieldset);
+	$('div:eq(1)').hide();
+
+	$('div:eq(1)').slideDown('3000');
+}

@@ -1,0 +1,75 @@
+//
+//  PhotoViewController.m
+//  test3
+//
+//  Created by Antoine JANVROT on 25/04/15.
+//  Copyright (c) 2015 Antoine JANVROT. All rights reserved.
+//
+
+#import "PhotoViewController.h"
+
+@interface PhotoViewController ()
+
+@end
+
+@implementation PhotoViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [ImageView setImage:[UIImage imageNamed:@"Poppy.jpg"]];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)TakePhoto:(id)sender {
+    
+    picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+}
+
+- (IBAction)PhotoLibrary:(id)sender {
+    
+    picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    [picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (IBAction)Facebook:(id)sender {
+    
+    mySLComposerSheet = [[SLComposeViewController alloc] init];
+    mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    [mySLComposerSheet setInitialText:[NSString stringWithFormat:@"\n#viedechat"]];
+    [mySLComposerSheet addImage:ImageView.image];
+    [self presentViewController:mySLComposerSheet animated:YES completion:NULL];
+}
+
+- (IBAction)Twitter:(id)sender {
+    
+    mySLComposerSheet = [[SLComposeViewController alloc] init];
+    mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [mySLComposerSheet setInitialText:[NSString stringWithFormat:@"\n#viedechat"]];
+    [mySLComposerSheet addImage:ImageView.image];
+    [self presentViewController:mySLComposerSheet animated:YES completion:NULL];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    [ImageView setImage:image];
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+@end
+

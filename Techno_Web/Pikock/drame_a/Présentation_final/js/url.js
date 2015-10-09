@@ -1,0 +1,21 @@
+//recupere username
+var user = "http://chart.apis.google.com/chart?cht=qr&chs=500x500&chl=";
+
+//recupere & modif URL
+var url = document.location.href;
+var url = url.substring(0, url.indexOf("."));
+
+url = url+".pikock.me";
+
+user = user+url;
+
+//Creation boody + balise a + text
+var body = document.getElementsByTagName('body');
+var balise_a = document.createElement('a');
+var text = document.createTextNode('Récupérez votre QR Code');
+
+//Ajout des attribut + text + intégrer au body
+balise_a.setAttribute("href", user);
+balise_a.appendChild(text);
+
+body[0].appendChild(balise_a);

@@ -1,0 +1,14 @@
+<html>
+
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <link rel="stylesheet" type="text/css" href="qr.css">
+	</head>
+
+	<body>
+		<a href="http://chart.apis.google.com/chart?cht=qr&chs=500x500&chl=amadeus.pikock.me">Clique ici pour test</a>
+		<br>
+		<script type="text/javascript" src="url.js"></script>
+	</body>
+
+</html>

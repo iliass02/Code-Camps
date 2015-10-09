@@ -1,0 +1,53 @@
+body
+{
+  background-color: white;
+}
+@font-face {
+font-family: "Oswald"; 
+src: url('Oswald.eot');
+src: local('Oswald-Regular'), local('Oswald'), url('Oswald.woff') 
+     format('woff'), url('Oswald-Regular.ttf') format('truetype'),
+     url('Oswald.svg#Oswald') format('svg')
+}
+h1
+{
+  font-size: 4em;
+  color:#848484;
+  text-align: center;
+  font-family: "Oswald";
+}
+
+.loader
+{
+  text-align: center;
+}
+.loader span
+{
+  background:#848484;
+  width:20px;
+  height:100px;
+  vertical-align:middle;
+  display:inline-block;
+  margin:80px auto;
+  -webkit-animation: loader 1s infinite;
+}
+.loader span:nth-of-type(2){
+  -webkit-animation-delay:0.4s;
+}
+.loader span:nth-of-type(3){
+  -webkit-animation-delay:0.6s;
+}
+
+
+@-webkit-keyframes loader{
+  0%{
+    width:20px;
+    height:50px;
+    opacity:0.8;
+  }
+  100%{
+    width:20px;
+    height:100px;
+    opacity:0.2;
+  }
+}
