@@ -1,0 +1,112 @@
+<ion-view cache-view="false">
+
+  <ion-header-bar toggle-class data-color="colorUrl">
+    <div class="buttons">
+      <button class="button button-clear " ng-click="goBack()"><i class="icon ion-arrow-left-c" style="color: #fff;"></i></button>
+    </div>
+    <h1 class="title " style="text-align: center; color: white;">Modifier le thème</h1>
+  </ion-header-bar>
+
+  <ion-content class="padding">
+
+    <div class="padding">
+
+      <div class="row">
+        <h5>Choisir votre thème</h5>
+      </div>
+
+      <form action="#">
+        <p>
+          <input name="color" ng-model="color" type="radio" id="red" value="red"/>
+          <label for="red">Rouge</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="blue" value="blue"/>
+          <label for="blue">Bleu</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="light-blue" value="light-blue"/>
+          <label for="light-blue">Bleu ciel</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="cyan" value="cyan"/>
+          <label for="cyan">Cyan</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="teal" value="teal"/>
+          <label for="teal">Turquoise</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="teal lighten-2" value="teal lighten-2"/>
+          <label for="teal lighten-2">Turquoise (Thème Skiller)</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="green" value="green"/>
+          <label for="green">Vert</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="light-green" value="light-green"/>
+          <label for="light-green">Vert pomme</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="yellow" value="yellow"/>
+          <label for="yellow">Jaune</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="lime" value="lime"/>
+          <label for="lime">Jaune citron</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="amber" value="amber"/>
+          <label for="amber">Ambre</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="orange" value="orange"/>
+          <label for="orange">Orange</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="deep-orange" value="deep-orange"/>
+          <label for="deep-orange">Orange foncé</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="brown" value="brown"/>
+          <label for="brown">Marron</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="pink" value="pink"/>
+          <label for="pink">Rose</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="purple" value="purple"/>
+          <label for="purple">Violet</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="deep-purple" value="deep-purple"/>
+          <label for="deep-purple">Violet foncé</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="indigo" value="indigo"/>
+          <label for="indigo">Indigo</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="grey" value="grey"/>
+          <label for="grey">Gris</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="blue-grey" value="blue-grey"/>
+          <label for="blue-grey">Bleu Gris</label>
+        </p>
+        <p>
+          <input name="color" ng-model="color" type="radio" id="black" value="black"/>
+          <label for="black">Noire</label>
+        </p>
+
+
+      </form>
+
+    </div>
+
+    <center><button toggle-class data-color="colorUrl" class="btn" ng-click="choiceColor(color)"> Ajouter </button></center>
+
+  </ion-content>
+</ion-view>

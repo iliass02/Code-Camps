@@ -1,0 +1,55 @@
+<ion-view view-title="Profil">
+
+  <ion-header-bar align-title="left" toggle-class data-color="colorUrl">
+    <div class="buttons">
+      <button class="button button-clear " ng-click="goBack()"><i class="icon ion-arrow-left-c" style="color: #fff;"></i></button>
+    </div>
+    <h1 class="title " style="text-align: center; color: white;">Profil</h1>
+  </ion-header-bar>
+
+
+
+
+
+  <ion-content class="padding">
+
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="https://intra.etna-alternance.net/report/trombi/image/login/{{user.login}}">
+        <span class="card-title">{{user.nom}} {{user.prenom}}</span>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Login : {{user.login}}<i class="material-icons right">more_vert</i></span>
+        <br />
+        <span class="card-title activator grey-text text-darken-3"><font size="4">Email : {{user.login}}@etna-alternance.net</font></span>
+        <br />
+        <span class="card-title activator grey-text text-darken-2"><font size="4">Promotion : {{user.nom_terms}} {{user.promo}}</font></span>
+
+        <center><a toggle-class data-color="colorUrl" class="btn" ng-click="showConfirm($event, user.telephone, user.login, user.nom, user.prenom)">Faire une demande de groupe</a></center>
+        <br><center><a toggle-class data-color="colorUrl" class="btn" href="#/listProject/{{user.id}}/{{colorUrl}}">Liste des projets</a></center>
+
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Compétences<i class="material-icons right">close</i></span>
+        <br />
+        <div class="col s12">
+          <label><font size="4">Maîtrisées</font></label>
+          <hr />
+          <div class="chip" ng-repeat="skillData in count track by $index">
+            <b ng-show="skillData.count_skill > 0">{{skillData.count_skill}}</b> {{skillData.nom}} <span ng-if="!add" ng-click="recommand(skillData.skill_id, skillData.nom, 0)" style="margin-left:5px;font-size:17px;"> + </span>
+          </div>
+          <div class="chip" ng-hide="count.length">Aucune compétences</div>
+        </div>
+        <div class="col s12">
+          <label><font size="4">A améliorer</font></label>
+          <hr />
+          <div class="chip" ng-repeat="skill in countImprove">
+            <b ng-show="skill.count_skill > 0">{{skill.count_skill}}</b> {{skill.nom}}  <span ng-click="recommand(skill.skill_id, skill.nom, 1)" style="margin-left:5px;font-size:17px;"> + </span>
+          </div>
+          <div class="chip" ng-hide="countImprove.length">Aucune compétences à améliorer</div>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

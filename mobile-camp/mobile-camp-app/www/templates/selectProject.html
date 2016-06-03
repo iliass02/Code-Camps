@@ -1,0 +1,47 @@
+<ion-view view-title="Compétences à améliorer" cache-view="false">
+  <ion-header-bar  toggle-class data-color="colorUrl">
+    <div class="buttons">
+      <button class="button button-clear " ng-click="goBack()"><i class="icon ion-arrow-left-c" style="color: #fff;"></i></button>
+    </div>
+    <div style="margin:0 auto; margin-top: 4px;"><b style="color:white; font-size: large">Projets</b></div>
+
+  </ion-header-bar>
+
+
+  <ion-content>
+
+    <div class="padding">
+      <div class="row">
+        <h5>Choisir un Projet</h5>
+      </div>
+
+      <div class="row">
+        <ul class="collection" style="margin-top: 0px">
+          <li class="collection-item avatar" ng-repeat="(uv_name, current_activities) in projects" ng-click="projectInfo()">
+            <i class="material-icons circle">assignment</i>
+            <span class="title">{{uv_name}}</span>
+            <p ng-repeat="activity in current_activities.activities">{{activity.name}} <br>
+            </p>
+
+
+            <div ng-repeat="activity in current_activities.activities">
+
+              <div class="card-content2">
+                <br>
+                <p>Date de début : {{activity.date_start}}</p>
+                <p>Date de fin : {{activity.date_end}}</p>
+                <br>
+
+              </div>
+              <a href="" class="secondary-content" ng-click="addMembers(activity.session, activity.id)"><i class="material-icons">send</i></a>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+  </ion-content>
+</ion-view>

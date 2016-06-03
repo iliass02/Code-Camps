@@ -1,0 +1,29 @@
+<ion-view view-title="Compétences maitrisées" cache-view="false">
+
+  <ion-header-bar align-title="left" class="teal lighten-2">
+
+    <h1 class="title " style="text-align: center; color: white;">Compétences maitrisées</h1>
+
+  </ion-header-bar>
+
+  <ion-content>
+
+    <div class="padding">
+      <form>
+
+        <div class="row">
+          <h5>Choisir vos compétences</h5>
+        </div>
+
+        <div class="row" ng-repeat="skill in skills">
+          <input type="checkbox" id="{{skill.id}}" checklist-model="user.roles" checklist-value="skill.id" ng-click="test()"/>
+          <label for="{{skill.id}}">{{skill.nom}}</label>
+        </div>
+
+      </form>
+    </div>
+
+    <center><a class="waves-effect waves-light btn" ng-click="newSkills(user.roles)"> Ajouter </a></center>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,28 @@
+<ion-view view-title="Compétences à améliorer" cache-view="false">
+
+  <ion-header-bar align-title="left" class="teal lighten-2">
+
+    <h1 class="title " style="text-align: center; color: white;">Compétences à améliorer</h1>
+
+  </ion-header-bar>
+  <ion-content>
+
+    <div class="padding">
+      <form>
+
+        <div class="row">
+          <h5>Choisir vos compétences à améliorer</h5>
+        </div>
+
+        <div class="row" ng-repeat="skillImprove in skillsImprove">
+          <input type="checkbox" id="{{skillImprove.id}}" checklist-model="user2.roles2" checklist-value="skillImprove.id" />
+          <label for="{{skillImprove.id}}">{{skillImprove.nom}}</label>
+        </div>
+
+      </form>
+    </div>
+
+    <center><a class="waves-effect waves-light btn" ng-click="newSkillsImprove(user2.roles2)"> Ajouter </a></center>
+
+  </ion-content>
+</ion-view>

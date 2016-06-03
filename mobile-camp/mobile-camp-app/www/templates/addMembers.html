@@ -1,0 +1,65 @@
+<ion-view >
+<ion-content>
+
+<div class="row">
+  <div class="input-field col s8">
+    <div class="col s10">
+      <input id="icon_prefix" type="text" class="validate" ng-model="search" ng-keyup="searchUsers(search)">
+      <label for="icon_prefix">Rechercher</label>
+    </div>
+    <div class="col s2">
+
+      <a class="btn-floating btn-small black" ng-click="goBack()">
+        <i class="small material-icons">phonelink_erase</i>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="row">
+  <div class="col s12">
+    <div ng-if="afficher" class="card" style="float:left;margin-right:4px;width:170px;" ng-repeat="user in users">
+
+      <div ng-click="addMembers(groupId, user.login)">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="https://intra.etna-alternance.net/report/trombi/image/login/{{user.login}}">
+        </div>
+        <div class="card-content" style="padding-top:7px">
+          <span class="card-title activator grey-text text-darken-4" style="font-size:13px;line-height:1.5px;">{{user.prenom}} {{user.nom}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="chip" ng-show="!search.length">Aucun résultat</div><br>
+
+
+
+  </div>
+
+
+</div>
+<div class="row">
+  <div class="col s12">
+    <div ng-if="membreInscrit">
+    <hr>
+    <h4>Membre inscrit :</h4>
+
+    </div>
+    <div class="card" style="float:left;margin-right:4px;width:150px;" ng-repeat="membre in membres">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="https://intra.etna-alternance.net/report/trombi/image/login/{{membre.login}}">
+      </div>
+      <div class="card-content" style="padding-top:7px">
+        <span class="card-title activator grey-text text-darken-4" style="font-size:13px;line-height:1.5px;">{{membre.firstname}} {{membre.lastname}}</span>
+        <p><a style="color: red" href="" ng-click="deleteMembers(groupId, membre.login)">Supprimer</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</ion-content>
+</ion-view>

@@ -1,0 +1,86 @@
+<ion-view view-title="Mon compte" cache-view="false">
+
+  <ion-header-bar align-title="left" toggle-class data-color="colorUrl">
+    <h1 class="title " style="text-align: center; color: white;">Mon Compte</h1>
+  </ion-header-bar>
+
+  <ion-content class="padding">
+
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="https://intra.etna-alternance.net/report/trombi/image/login/{{login}}">
+        <span class="card-title">{{name}}</span>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Login : {{login}}<i class="material-icons right">more_vert</i></span>
+        <br />
+        <span class="card-title activator grey-text text-darken-3"><font size="4">Email : {{email}}</font></span>
+        <br />
+
+        <span class="card-title activator grey-text text-darken-2"><font size="4">Promotion : {{nomTerms}} {{promo}}</font></span>
+        <br><center><a toggle-class data-color="colorUrl" class="btn" href="#/listProject/{{userId}}/{{colorUrl}}">Liste des projets</a></center>
+        <br><center><a toggle-class data-color="colorUrl" class="btn" href="#/wishlist/{{userId}}/{{colorUrl}}">Wish List</a></center><br>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Compétences<i class="material-icons right">close</i></span>
+        <br />
+        <div class="col s12">
+          <label><font size="4">Maîtrisées</font></label>
+          <hr />
+          <div class="chip" ng-repeat="skillM in skillsMaster">
+            {{skillM.nom}}
+            <i class="material-icons" ng-show="delete" ng-click="delSkill(skillM);">close</i>
+          </div>
+          <div class="chip" ng-hide="skillsMaster.length">Aucune compétences</div>
+        </div>
+        <div class="col s12">
+          <label><font size="4">A améliorer</font></label>
+          <hr />
+          <div class="chip" ng-repeat="skill in skills">
+            {{skill.nom}}
+            <i class="material-icons" ng-show="delete" ng-click="delSkill(skill);">close</i>
+          </div>
+          <div class="chip" ng-hide="skills.length">Aucune compétences à améliorer</div>
+        </div>
+        <div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">
+          <a class="btn-floating btn-large red">
+            <i class="material-icons">settings</i>
+          </a>
+          <ul>
+            <li><a class="btn-floating green" ng-click="chooseSkill($event);"><i class="material-icons">add</i></a></li>
+            <li><a class="btn-floating blue" ng-click="switchSkill($event);"><i class="material-icons">mode_edit</i></a></li>
+            <li><a class="btn-floating red" ng-click="delete=!delete"><i class="material-icons">delete</i></a></li>
+            <li><a class="btn-floating purple" href="#/color/{{login}}/{{colorUrl}}"><i class="material-icons">invert_colors</i></a></li>
+            <li><a class="btn-floating grey" ng-click="deco($event);"><i class="material-icons">power_settings_new</i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <div class="bar bar-footer" style="background-image: none !important; padding: 0px; margin-bottom: 5px;">
+    <ion-tabs class="tabs-icon-top" style="width: 100%">
+
+      <ion-tab title="Projets en cours" href="#/current-activity/{{login}}/{{colorUrl}}" icon-on="ion-ios-paper" icon-off="ion-ios-paper-outline">
+        <!-- Tab 1 content -->
+      </ion-tab>
+
+      <ion-tab title="Recherche" href="#/search/{{userId}}/{{colorUrl}}" icon-on="ion-ios-search" icon-off="ion-ios-search">
+        <!-- Tab 3 content -->
+      </ion-tab>
+
+      <ion-tab title="Tinder"  href="#/tinderView/{{userId}}/{{userTinderId}}/{{colorUrl}}" icon-on="ion-ios-people" icon-off="ion-ios-people-outline">
+        <!-- Tab 2 content -->
+      </ion-tab>
+      <ion-tab title="WishList" href="#/wishlist/{{userId}}/{{colorUrl}}"  icon-on="ion-ios-star" icon-off="ion-ios-star-outline">
+        <!-- Tab 3 content -->
+      </ion-tab>
+      <ion-tab title="Mon Compte" href="#/account/{{userId}}/{{colorUrl}}"  icon-on="ion-ios-person" icon-off="ion-ios-person-outline">
+        <!-- Tab 3 content -->
+      </ion-tab>
+
+    </ion-tabs>
+  </div>
+
+</ion-view>

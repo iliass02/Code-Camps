@@ -1,0 +1,92 @@
+<ion-view view-title="Detail du projet" cache-view="false">
+
+
+  <ion-header-bar align-title="left" toggle-class data-color="colorUrl">
+    <div class="buttons">
+      <button class="button button-clear " ng-click="goBack(login)"><i class="icon ion-arrow-left-c" style="color: #fff;"></i></button>
+    </div>
+    <h1 class="title " style="text-align: center; color: white;">Detail du projet</h1>
+
+  </ion-header-bar>
+  <ion-content>
+
+    <div class="card" ng-if="chargement">
+      <div class="card-image waves-effect waves-block waves-light">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{{project.uv_name}}<i class="material-icons right">more_vert</i></span>
+        <p>{{project.name}}</p><br>
+        <p>Groupes {{project.min_student}} min / {{project.max_student}} max</p>
+        <br><br>
+        <div>
+
+          <a toggle-class data-color="colorUrl" class="btn" ng-click="createGroup()">Créer un groupe</a>
+
+          <div ng-if="ajouterMembreButton">
+          <br><a toggle-class data-color="colorUrl" class="btn" ng-click="addMembersView()">Ajouter un membre</a><br><br>
+          </div>
+
+          <div ng-if="supprimerGroupeButton">
+            <a toggle-class data-color="colorUrl" class="btn" ng-click="modalDelete($event, groupId)">Supprimer le groupe</a><br><br>
+          </div>
+
+          <div ng-if="validationDiv">
+
+          <hr>
+          <p>{{prenomLeader}} {{nomLeader}} vous a ajouté à son groupe </p><br>
+          <div class="row">
+
+            <div class="col s6">
+
+              <a class="waves-effecten green btn" ng-click="validationGroup(groupId, 1)">Accepter</a><br><br>
+            </div>
+            <div class="col s6">
+
+              <a class="waves-effecten red btn" ng-click="validationGroup(groupId, 0)">Refuser</a><br><br>
+            </div>
+          </div>
+          <hr>
+          </div>
+
+            <div class="col s12">
+              <div ng-if="membreInscrit">
+                <hr>
+                <h3>Membre inscrit :</h3>
+              </div>
+              <div class="card" style="float:left;margin-right:4px;width:130px;" ng-repeat="membre in membres">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img src="https://intra.etna-alternance.net/report/trombi/image/login/{{membre.login}}">
+                </div>
+                <div class="card-content" style="padding-top:4px">
+                  <span class="card-title grey-text text-darken-4" style="font-size:13px;line-height:0.2px;">{{membre.firstname}} {{membre.lastname}}</span>
+                </div>
+              </div>
+            </div>
+
+
+
+        </div>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">{{project.uv_name}}<i class="material-icons right">close</i></span>
+        <br>
+        <p> Inscription : {{project.dates.registration_date}}</p>
+        <p> Début : {{project.dates.date_start}}</p>
+        <p> Fin : {{project.dates.date_end}}</p>
+      </div>
+    </div>
+
+
+
+    <script id="templates/modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-content class="padding">
+
+
+        </ion-content>
+      </ion-modal-view>
+    </script>
+
+
+  </ion-content>
+</ion-view>

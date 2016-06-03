@@ -1,0 +1,56 @@
+<ion-view view-title="Inscription" cache-view="false">
+
+  <ion-header-bar align-title="left" class="teal lighten-2">
+    <div class="buttons">
+      <button class="button button-clear " ng-click="goBack()"><i class="icon ion-arrow-left-c" style="color: #fff;"></i></button>
+    </div>
+    <h1 class="title " style="text-align: center; color: white;">Inscription</h1>
+  </ion-header-bar>
+
+  <ion-content class="padding">
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="nom" type="text" class="validate" data-ng-model="nom" placeholder="Nom" required>
+          </div>
+          <div class="input-field col s6">
+            <input id="prenom" type="text" class="validate" data-ng-model="prenom" placeholder="Prenom" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="login" type="text" class="validate" data-ng-model="login" placeholder="Login ETNA" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="mdp" type="password" class="validate" data-ng-model="mdp" placeholder="Mot de passe ETNA" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="icon_telephone" type="text" class="validate" data-ng-model="telephone" placeholder="Telephone Portable" ui-mask="99 99 99 99 99"  ui-mask-placeholder ui-mask-placeholder-char="_" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+
+              <select  class="browser-default" ng-model="filterCondition.term" ng-options="term.terms_id as term.nom_terms for term in terms">
+                <option value="" disabled selected>Promo ETNA</option>
+              </select>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+    <div class="row">
+      <div class="center-block">
+        <a class="waves-effect waves-light btn" ng-click="signup(nom, prenom, login, mdp, filterCondition.term, telephone)">Suivant</a>
+      </div>
+    </div>
+  </ion-content>
+
+
+</ion-view>

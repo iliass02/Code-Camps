@@ -1,0 +1,30 @@
+<ion-view >
+
+  <ion-header-bar align-title="left" toggle-class data-color="colorUrl">
+    <div class="buttons">
+      <button class="button button-clear " ng-click="goBack()"><i class="icon ion-arrow-left-c" style="color: #fff;"></i></button>
+    </div>
+    <h1 class="title " style="text-align: center; color: white;">Modifier des compétences</h1>
+  </ion-header-bar>
+
+  <ion-content class="padding">
+
+    <div class="padding">
+      <form>
+
+        <div class="row">
+          <p><font size="4">Cliquer pour passer les compétences au status : {{status}}</font></p>
+        </div>
+
+        <div class="row" ng-repeat="skill in skills">
+          <input type="checkbox" id="{{skill.id}}" checklist-model="user.roles" checklist-value="skill.id" ng-click="test()"/>
+          <label class="chip" for="{{skill.id}}">{{skill.nom}}</label>
+        </div>
+
+      </form>
+    </div>
+
+    <center><a toggle-class data-color="colorUrl" class="btn" ng-show="skills.length" ng-click="changeStatusSkills(user.roles);"> Ajouter </a></center>
+
+  </ion-content>
+</ion-view>

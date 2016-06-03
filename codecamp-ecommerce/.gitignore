@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+codecamp-ecommerce.iml
+.idea
+.project
+.buildpath
+.settings
+httpdocs/config/settings.inc.php

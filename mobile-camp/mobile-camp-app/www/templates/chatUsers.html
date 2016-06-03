@@ -1,0 +1,31 @@
+<ion-view cache-view="false">
+
+  <ion-header-bar align-title="left" toggle-class data-color="colorUrl">
+    <div class="buttons">
+      <button class="button button-clear " ng-click="goBack()"><i class="icon ion-arrow-left-c" style="color: #fff;"></i></button>
+    </div>
+    <h1 class="title " style="text-align: center; color: white;">Conversation</h1>
+  </ion-header-bar>
+
+  <ion-content >
+
+    <ul class="collection">
+      <li class="collection-item avatar" ng-repeat="chat in chats">
+        <img src="https://intra.etna-alternance.net/report/trombi/image/login/{{chat.login}}" alt="" class="circle">
+        <p>{{chat.prenom}}
+        </p>
+        <span class="title">{{chat.message}}</span>
+      </li>
+      <li class="collection-item">
+        <textarea placeholder="Votre message" id="textarea1" ng-model="message.text" class="materialize-textarea"></textarea>
+        <center><a toggle-class data-color="colorUrl" class="btn" ng-click="message(message.text)">Envoyer</a></center>
+      </li>
+
+    </ul>
+
+
+  </ion-content>
+
+
+
+</ion-view>

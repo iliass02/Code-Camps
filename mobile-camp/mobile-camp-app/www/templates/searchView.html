@@ -1,0 +1,70 @@
+<ion-view view-title="Rechercher">
+
+  <ion-header-bar align-title="left" toggle-class data-color="colorUrl">
+
+    <h1 class="title " style="text-align: center; color: white;">Recherche</h1>
+
+  </ion-header-bar>
+
+  <ion-content>
+    <div class="list">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">search</i>
+          <input id="icon_prefix" type="text" class="validate" ng-model="skills" ng-keyup="getSkills(skills, promo)">
+          <label for="icon_prefix">Rechercher</label>
+        </div>
+      </div>
+      <!--<div class="item item-input-inset">-->
+        <!--<label class="item-input-wrapper">-->
+          <!--<input type="text" placeholder="nom ou langage" ng-model="skills">-->
+        <!--</label>-->
+        <!--<button class="button button-small" ng-click="getSkills(skills, promo)">-->
+          <!--Envoyer-->
+        <!--</button>-->
+      <!--</div>-->
+    </div>
+    <div class="row" >
+      <div class="s12 m6" ng-if="users.length != 0" >
+        <div class="card" style="float:left;margin-right:4px;width:170px;" ng-repeat="user in users">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="https://intra.etna-alternance.net/report/trombi/image/login/{{user.login}}">
+          </div>
+          <div class="card-content" style="padding-top:7px">
+            <span class="card-title activator grey-text text-darken-4" style="font-size:13px;line-height:1.5px;">
+             {{user.prenom}} {{user.nom}}
+            </span>
+            <p><a href="#/account/viewer/{{user.user_id}}/{{colorUrl}}">En savoir plus</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <div class="bar bar-footer" style="background-image: none !important; padding: 0px; margin-bottom: 5px;">
+    <ion-tabs class="tabs-icon-top" style="width: 100%">
+
+      <ion-tab title="Projets en cours" href="#/current-activity/{{login}}/{{colorUrl}}" icon-on="ion-ios-paper" icon-off="ion-ios-paper-outline">
+        <!-- Tab 1 content -->
+      </ion-tab>
+
+      <ion-tab title="Recherche" href="#/search/{{userId}}/{{colorUrl}}" icon-on="ion-ios-search" icon-off="ion-ios-search">
+        <!-- Tab 3 content -->
+      </ion-tab>
+
+      <ion-tab title="Tinder"  href="#/tinderView/{{userId}}/{{userTinderId}}/{{colorUrl}}" icon-on="ion-ios-people" icon-off="ion-ios-people-outline">
+        <!-- Tab 2 content -->
+      </ion-tab>
+
+      <ion-tab title="WishList" href="#/wishlist/{{userId}}/{{colorUrl}}"  icon-on="ion-ios-star" icon-off="ion-ios-star-outline">
+        <!-- Tab 3 content -->
+      </ion-tab>
+
+      <ion-tab title="Mon Compte" href="#/account/{{userId}}/{{colorUrl}}"  icon-on="ion-ios-person" icon-off="ion-ios-person-outline">
+        <!-- Tab 3 content -->
+      </ion-tab>
+
+    </ion-tabs>
+  </div>
+</ion-view>

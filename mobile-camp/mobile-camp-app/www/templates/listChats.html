@@ -1,0 +1,51 @@
+<ion-view view-title="Wish List" cache-view="false">
+
+  <ion-header-bar align-title="left" toggle-class data-color="colorUrl">
+
+    <h1 class="title " style="text-align: center; color: white;">Liste des conversations</h1>
+
+  </ion-header-bar>
+
+
+
+  <ion-content>
+    <ul class="collection" style="margin-top: 0px">
+      <li class="collection-item avatar" ng-hide="chats.length">
+        <img src="https://intra.etna-alternance.net/report/trombi/image/login/" alt="" class="circle">
+        <span class="title">Aucune conversation</span>
+      </li>
+      <li class="collection-item avatar" ng-repeat="chat in chats">
+        <img src="https://intra.etna-alternance.net/report/trombi/image/login/{{chat.login}}" alt="" class="circle" ng-click="getChat(chat.user_id, chat.user_id_chat)">
+        <span class="title">{{chat.nom}} {{chat.prenom}}</span>
+      </li>
+    </ul>
+
+  </ion-content>
+
+
+  <div class="bar bar-footer" style="background-image: none !important; padding: 0px; margin-bottom: 5px;">
+    <ion-tabs class="tabs-icon-top" style="width: 100%">
+
+      <ion-tab title="Projets en cours" href="#/current-activity/{{login}}/{{colorUrl}}" icon-on="ion-ios-paper" icon-off="ion-ios-paper-outline">
+        <!-- Tab 1 content -->
+      </ion-tab>
+
+      <ion-tab title="Recherche" href="#/search/{{userId}}/{{colorUrl}}" icon-on="ion-ios-search" icon-off="ion-ios-search">
+        <!-- Tab 3 content -->
+      </ion-tab>
+
+      <ion-tab title="Tinder"  href="#/tinderView/{{userId}}/{{userTinderId}}/{{colorUrl}}" icon-on="ion-ios-people" icon-off="ion-ios-people-outline">
+        <!-- Tab 2 content -->
+      </ion-tab>
+
+      <ion-tab title="WishList" href="#/wishlist/{{userId}}/{{colorUrl}}"  icon-on="ion-ios-star" icon-off="ion-ios-star-outline">
+        <!-- Tab 3 content -->
+      </ion-tab>
+
+      <ion-tab title="Mon Compte" href="#/account/{{userId}}/{{colorUrl}}"  icon-on="ion-ios-person" icon-off="ion-ios-person-outline">
+        <!-- Tab 3 content -->
+      </ion-tab>
+
+    </ion-tabs>
+  </div>
+</ion-view>

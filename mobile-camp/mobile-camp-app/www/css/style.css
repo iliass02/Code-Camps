@@ -1,0 +1,35 @@
+/* Empty. Add your own CSS if you like */
+
+.card-image {
+  height: 50%;
+}
+.card-image2 {
+  float: left;
+  width: 70px;
+}
+
+.right-content {
+  width: 60%;
+  float: left;
+  margin-top:10px;
+  margin-bottom:20px;
+}
+
+.chip {
+  margin-bottom:10px;
+}
+
+.card-content {
+  padding-bottom: 30px !important;
+}
+
+img.hoverZoomLink {
+  margin-top:7px;
+  width:42px;
+  height:42px;
+  margin-left:10px;
+}
+
+.left {
+  margin-left:10px;
+}
